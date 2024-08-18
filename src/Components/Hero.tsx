@@ -4,7 +4,7 @@ import MagicButton from "./ui/MagicButton";
 import { TbLocationFilled } from "react-icons/tb";
 const Hero = () => {
   return (
-    <div className="pd-20 pt-36">
+    <div id="/" className="pd-20 pt-36">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-2 h-screen"

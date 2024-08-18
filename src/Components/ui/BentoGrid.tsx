@@ -1,7 +1,12 @@
+'use client';
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import { GridGlobe } from "./GridGlobe";
-
+import Lottie from "react-lottie";
+import { useState } from "react";
+import animationData from "@/Data/confetti.json"
+import MagicButton from "./MagicButton";
+import { IoCopyOutline } from "react-icons/io5";
 export const BentoGrid = ({
   className,
   children,
@@ -42,6 +47,11 @@ export const BentoGridItem = ({
   spareImg?: string;
   id?: number;
 }) => {
+    const[copied,setCopied] = useState(false)
+    const handleCopy = () => {
+        navigator.clipboard.writeText('subhamdas967990@gmail.com');
+        setCopied(true)
+    }
   return (
     <div
       className={cn(
@@ -73,16 +83,12 @@ export const BentoGridItem = ({
             <img
               src={spareImg}
               alt={spareImg}
-              //   width={220}
               className="object-cover object-center w-full h-full"
             />
           )}
         </div>
         {id === 6 && (
-          // add background animation , remove the p tag
-          <BackgroundGradientAnimation>
-            <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
-          </BackgroundGradientAnimation>
+          <BackgroundGradientAnimation/>
         )}
         <div
           className={cn(
@@ -128,7 +134,20 @@ export const BentoGridItem = ({
               </div>
             </div>
           )}
-          {id === 6 && <div className=""></div>}
+          {id === 6 && <div className="mt-5 relative">
+            <div className={`absolute -bottom-5 right-0`}>
+                <Lottie
+                  options={{
+                    loop: copied,
+                    autoplay: copied,
+                    animationData: animationData,
+                    rendererSettings:{
+                        preserveAspectRatio: 'xMidYMid slice',
+                    }
+                  }}/>
+            </div>
+            <MagicButton title={copied ? 'Email Copied':'Copy my Email'} position="left" icon={<IoCopyOutline/>} innerClassName="!bg-[#161a31]" handleClick={handleCopy}/>
+            </div>}
         </div>
       </div>
     </div>
