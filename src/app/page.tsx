@@ -3,7 +3,7 @@ import Hero from "@/Components/Hero";
 import Grid from "@/Components/Grid";
 import { FloatingNav } from "@/Components/ui/FloatingNav";
 import RecentProjects from "@/Components/RecentProjects";
-import { navItems } from "@/Data";
+import { navItems } from "@/data";
 import Clients from "@/Components/Clients";
 import Experience from "@/Components/Experience";
 import Approach from "@/Components/Approach";
