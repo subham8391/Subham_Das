@@ -7,6 +7,7 @@ import { navItems } from "@/Data";
 import Clients from "@/Components/Clients";
 import Experience from "@/Components/Experience";
 import Approach from "@/Components/Approach";
+import Footer from "@/Components/Footer";
 export default function Home() {
   return (
     <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden max-auto sm:px-10 px-5">
@@ -18,6 +19,7 @@ export default function Home() {
         <Clients/>
         <Experience/>
         <Approach/>
+        <Footer/>
       </div>
      
     </main>
